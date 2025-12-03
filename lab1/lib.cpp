@@ -39,10 +39,21 @@ void trapezoid::output()
 
 void trapezoid::points()
 {
-	cout << "левая верхняя граница: \n"; x1.output();
-	cout << "правая верхняя граница: \n"; x2.output();
-	cout << "левая нижняя граница: \n"; y1.output();
-	cout << "правая нижняя граница: \n"; y2.output();
+	cout << "левая верхняя граница: \n"; 
+	cout << "координата x: " << x << endl;
+	cout << "координата y: " << y << endl;
+
+	cout << "правая верхняя граница: \n";
+	cout << "координата x: " << x + a << endl;
+	cout << "координата y: " << y << endl;
+
+	cout << "левая нижняя граница: \n";
+	cout << "координата x: " << x - ((b-a)/2) << endl;
+	cout << "координата y: " << y - h << endl;
+
+	cout << "правая нижняя граница: \n";;
+	cout << "координата x: " << x + (a+b)/2 << endl;
+	cout << "координата y: " << y - h << endl;
 }
 
 float trapezoid::get_a()
@@ -82,16 +93,16 @@ float trapezoid::angle()
 	return s;
 }
 
-void trapezoid::pointO()
-{
-	point O;
-	float k;
-	k = b / a;
-	O.setX((y1.getX() + k * x2.getX()) / (1 + k));
-	O.setY((y1.getY() + k * x2.getY()) / (1 + k));
-	cout << "Координаты точки пересечения координат: " << endl;
-	O.output();
-}
+//void trapezoid::pointO()
+//{
+//	point O;
+//	float k;
+//	k = b / a;
+//	O.setX((y1.getX() + k * x2.getX()) / (1 + k));
+//	O.setY((y1.getY() + k * x2.getY()) / (1 + k));
+//	cout << "Координаты точки пересечения координат: " << endl;
+//	O.output();
+//}
 
 void trapezoid::operator*(int k)
 {

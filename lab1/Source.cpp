@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
 	rus;
-	trapezoid a;
-	a.input();
+	trapezoid a(0,0,4,6,3);
+	a.points();
 	return 0;
 }
