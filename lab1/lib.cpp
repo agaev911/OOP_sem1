@@ -7,62 +7,22 @@ using namespace std;
 #include <locale.h>
 #define rus setlocale(LC_ALL, "rus");
 
+trapezoid::trapezoid() : x(0),y(0), a(0), b(0), h(0) {}
 
-float point::getX()
-{
-	return x;
-}
-float point::getY()
-{
-	return y;
-}
-
-void point::input()
-{
-	cout << "координата x: "; cin >> x;
-	cout << "координата y: "; cin >> y;
-}
-
-void point::output()
-{
-	cout << "координата x: " << x << endl;
-	cout << "координата y: " << y << endl;
-}
-
-
-trapezoid::trapezoid() : x1(0, 0), a(0), b(0), h(0)
-{
-	x2.setX(x1.getX() + a);
-	x2.setY(x1.getY());
-
-	y1.setX(x1.getX() - ((b - a) / 2));
-	y1.setY(x1.getY() - h);
-
-	y2.setX(x1.getX() + ((a + b) / 2));
-	y2.setY(x1.getY() - h);
-}
-
-trapezoid::trapezoid(float x_, float y_, float a_, float b_, float h_) : a(a_), b(b_), h(h_)
-{
-	x1.setX(x_); x1.setY(y_); 
-	x2.setX(x1.getX() + a);
-	x2.setY(x1.getY());
-
-	y1.setX(x1.getX() - ((b - a) / 2));
-	y1.setY(x1.getY() - h);
-
-	y2.setX(x1.getX() + ((a + b) / 2));
-	y2.setY(x1.getY() - h);
-}
+trapezoid::trapezoid(float x_, float y_, float a_, float b_, float h_) : x(x_), y(y_), a(a_), b(b_), h(h_) {}
 
 void trapezoid::input()
 {
 	cout << "введите координаты верхнй левой вершины: \n";
-	x1.input();
+	cout << "координата x: "; cin >> x;
+	cout << "координата y: "; cin >> y;
+
 	cout << "введите длину основания a: \n";
 	cout << "a: "; cin >> a;
+
 	cout << "введите длину основания b: \n";
 	cout << "b: "; cin >> b;
+
 	cout << "введите длину высоты h: \n";
 	cout << "h: "; cin >> h;
 }

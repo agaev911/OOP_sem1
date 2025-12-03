@@ -1,26 +1,9 @@
 #pragma once
 
-struct point
-{
-	float x, y;
-	point() : x(0), y(0) {};
-	point(float x_, float y_) : x(x_), y(y_) {};
-
-	void setX(float x_) { x = x_; }
-	void setY(float y_) { y = y_; }
-	
-	float getX();
-	float getY();
-
-	void input();
-	void output();
-};
-
 
 class trapezoid
 {
-	point x1, x2, y1, y2;
-	float a, b, h;
+	float x, y, a, b, h;
 
 public:
 
