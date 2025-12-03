@@ -93,16 +93,17 @@ float trapezoid::angle()
 	return s;
 }
 
-//void trapezoid::pointO()
-//{
-//	point O;
-//	float k;
-//	k = b / a;
-//	O.setX((y1.getX() + k * x2.getX()) / (1 + k));
-//	O.setY((y1.getY() + k * x2.getY()) / (1 + k));
-//	cout << "Координаты точки пересечения координат: " << endl;
-//	O.output();
-//}
+void trapezoid::pointO()
+{
+	float x, y;
+	float k;
+	k = b / a;
+	x = ((this->x - ((b - a) / 2)) + k * (this->x + a) / (1 + k));
+	y = (((this->y - h) + k * this->y) / (1 + k));
+	cout << "Координаты точки пересечения координат: " << endl;
+	cout << "координата x: " << x << endl;
+	cout << "координата y: " << y << endl;
+}
 
 void trapezoid::operator*(int k)
 {
