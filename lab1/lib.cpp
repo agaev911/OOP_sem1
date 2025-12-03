@@ -13,7 +13,7 @@ trapezoid::trapezoid(float x_, float y_, float a_, float b_, float h_) : x(x_), 
 
 void trapezoid::input()
 {
-	cout << "введите координаты верхнй левой вершины: \n";
+	cout << "введите координаты верхней левой вершины: \n";
 	cout << "координата x: "; cin >> x;
 	cout << "координата y: "; cin >> y;
 	
@@ -82,7 +82,7 @@ float trapezoid::angle()
 {
 	float const p = 3.14159;
 	float s;
-	s = 180 - ( (atan( (2 * h) / (a - b) )) * 180 ) / p ;
+	s = 180 - ( (atan( (2 * h) / abs(a - b) )) * 180 ) / p ;
 	return s;
 }
 
@@ -93,7 +93,7 @@ void trapezoid::pointO()
 	k = b / a;
 	x = ((this->x - ((b - a) / 2)) + k * (this->x + a) / (1 + k));
 	y = (((this->y - h) + k * this->y) / (1 + k));
-	cout << " оординаты точки пересечени€ координат: " << endl;
+	cout << " оординаты точки пересечени€ диагоналей: " << endl;
 	cout << "координата x: " << x << endl;
 	cout << "координата y: " << y << endl;
 }
