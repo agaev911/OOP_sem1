@@ -37,4 +37,6 @@ public:
 	void operator*(int k);
 	
 	float radius();
+
+	void operator==(trapezoid t);
 };

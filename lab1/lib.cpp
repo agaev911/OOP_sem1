@@ -118,3 +118,9 @@ float trapezoid::radius()
 	r = 0.5 * sqrt(pow(b, 2) + c);
 	return r;
 }
+
+void trapezoid::operator==(trapezoid t)
+{
+	if (a == t.a && b == t.b && h == t.h) cout << "Трапеции равны";
+	else cout << "Трапеции не равны";
+}
