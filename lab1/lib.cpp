@@ -7,8 +7,8 @@ using namespace std;
 #include <locale.h>
 #define rus setlocale(LC_ALL, "rus");
 
-trapezoid::trapezoid() : x(0),y(0), a(0), b(0), h(0) {}
 
+trapezoid::trapezoid() : x(0),y(0), a(0), b(0), h(0) {}
 trapezoid::trapezoid(float x_, float y_, float a_, float b_, float h_) : x(x_), y(y_), a(a_), b(b_), h(h_) {}
 
 void trapezoid::input()
@@ -16,13 +16,13 @@ void trapezoid::input()
 	cout << "введите координаты верхнй левой вершины: \n";
 	cout << "координата x: "; cin >> x;
 	cout << "координата y: "; cin >> y;
-
+	
 	cout << "введите длину основани€ a: \n";
 	cout << "a: "; cin >> a;
-
+	
 	cout << "введите длину основани€ b: \n";
 	cout << "b: "; cin >> b;
-
+	
 	cout << "введите длину высоты h: \n";
 	cout << "h: "; cin >> h;
 }
@@ -32,10 +32,25 @@ void trapezoid::output()
 	cout << "координаты верхнй левой вершины: \n";
 	cout << "координата x: " << x << endl;
 	cout << "координата y: " << y << endl;
+
 	cout << "длина основани€ a: " << a << endl;
+
 	cout << "длина основани€ b: " << b << endl;
+
 	cout << "длина высоты h: " << h << endl;
 }
+
+float trapezoid::get_x() const { return x; }
+float trapezoid::get_y() const { return y; }
+float trapezoid::get_a() const { return a; }
+float trapezoid::get_b() const { return b; }
+float trapezoid::get_h() const { return h; }
+
+void trapezoid::set_x(float x_) { x = x_; }
+void trapezoid::set_y(float y_) { y = y_; }
+void trapezoid::set_a(float a_) { a = a_; }
+void trapezoid::set_b(float b_) { b = b_; }
+void trapezoid::set_h(float h_) { h = h_; }
 
 void trapezoid::points()
 {
@@ -56,32 +71,10 @@ void trapezoid::points()
 	cout << "координата y: " << y - h << endl;
 }
 
-float trapezoid::get_a()
-{
-	return a;
-}
-
-float trapezoid::get_b()
-{
-	return b;
-}
-float trapezoid::get_h()
-{
-	return h;
-}
-
-
 float trapezoid::middleline()
 {
 	float s;
 	s = ((a + b) / 2);
-	return s;
-}
-
-float trapezoid::area()
-{
-	float s;
-	s = ((a + b) / 2) * h;
 	return s;
 }
 
@@ -103,6 +96,13 @@ void trapezoid::pointO()
 	cout << " оординаты точки пересечени€ координат: " << endl;
 	cout << "координата x: " << x << endl;
 	cout << "координата y: " << y << endl;
+}
+
+float trapezoid::area()
+{
+	float s;
+	s = ((a + b) / 2) * h;
+	return s;
 }
 
 void trapezoid::operator*(int k)
