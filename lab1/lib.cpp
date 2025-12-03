@@ -30,7 +30,8 @@ void trapezoid::input()
 void trapezoid::output()
 {
 	cout << "координаты верхнй левой вершины: \n";
-	x1.output(); puts("");
+	cout << "координата x: " << x << endl;
+	cout << "координата y: " << y << endl;
 	cout << "длина основания a: " << a << endl;
 	cout << "длина основания b: " << b << endl;
 	cout << "длина высоты h: " << h << endl;
