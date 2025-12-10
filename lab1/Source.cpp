@@ -15,6 +15,20 @@ int main()
 	cout << "Трапеция A:" << endl; a.output();
 	puts("");
 
+	cout << "x: "<< a.get_x() << endl;
+	cout << "y: " << a.get_y() << endl;
+	cout << "a: " << a.get_a() << endl;
+	cout << "b: " << a.get_b() << endl;
+	cout << "h: " << a.get_h() << endl;
+
+	a.set_x(2);
+	a.set_y(2);
+	a.set_a(8);
+	a.set_b(10);
+	a.set_h(4);
+
+	a.output();
+
 	a.point(3, x, y);
 	cout << "Координата нужной вершины x: " << x << "\nКоордината нужной вершины y: " << y << endl;
 	
