@@ -9,12 +9,15 @@ using namespace std;
 int main()
 {
 	rus;
-	trapezoid a(0,0,6,4,3), b;
+	trapezoid a(0,0,4,6,2), b;
 	float x, y, Ox, Oy;
 	
 	cout << "Трапеция A:" << endl; a.output();
 	puts("");
 
+	a.point(3, x, y);
+	cout << "Координата нужной вершины x: " << x << "\nКоордината нужной вершины y: " << y << endl;
+	
 	cout << "Средняя линия трапеции D="<< a.middleline() << endl;
 
 	cout << "Тупой угол трапеции @=" << a.angle() << endl;
@@ -41,12 +44,9 @@ int main()
 	b.output();
 	a == b;
 	
-	a.output();
-	puts("");
 	
-	a.point(3, x, y);
 	
-	cout << x << " " << y;
+	
 	
 	return 0;
 }

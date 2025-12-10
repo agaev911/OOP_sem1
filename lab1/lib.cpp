@@ -75,7 +75,7 @@ void trapezoid::point(int i, float &x_, float &y_)
 	if (i == 4)
 	{
 		x_ = x + (a + b) / 2;
-		y = y - h;
+		y_ = y - h;
 	}
 }
 
@@ -125,6 +125,33 @@ float trapezoid::radius()
 
 void trapezoid::operator==(trapezoid t)
 {
-	if (a == t.a && b == t.b && h == t.h) cout << "Трапеции равны";
-	else cout << "Трапеции не равны";
+	float a[2], b[2], c[2], d[2], a1[2], b1[2], c1[2], d1[2];
+	float v1[2], v2[2], v3[2], v4[2];
+
+	this->point(1, a[0], a[1]);
+	this->point(2, b[0], b[1]);
+	this->point(3, c[0], c[1]);
+	this->point(4, d[0], d[1]);
+
+	t.point(1, a1[0], a1[1]);
+	t.point(2, b1[0], b1[1]);
+	t.point(3, c1[0], c1[1]);
+	t.point(4, d1[0], d1[1]);
+
+	v1[0] = a[0] - a1[0];
+	v1[1] = a[1] - a1[1];
+
+	v2[0] = b[0] - b1[0];
+	v2[1] = b[1] - b1[1];
+
+	v3[0] = c[0] - c1[0];
+	v3[1] = c[1] - c1[1];
+
+	v4[0] = d[0] - d1[0];
+	v4[1] = d[1] - d1[1];
+	if (v1[0] == v2[0] && v1[0] == v3[0] && v1[0] == v4[0] && v1[1] == v2[1] && v1[1] == v3[1] && v1[1] == v4[1])
+	{
+		cout << "Трапеции равны." << endl;
+	}
+	else cout << "Трапеции не равны" << endl;
 }
