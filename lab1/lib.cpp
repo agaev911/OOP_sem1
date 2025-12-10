@@ -29,7 +29,7 @@ void trapezoid::input()
 
 void trapezoid::output()
 {
-	cout << "координаты верхнй левой вершины: \n";
+	cout << "координаты верхнй левой вершины трапеции : \n";
 	cout << "координата x: " << x << endl;
 	cout << "координата y: " << y << endl;
 
@@ -52,23 +52,31 @@ void trapezoid::set_a(float a_) { a = a_; }
 void trapezoid::set_b(float b_) { b = b_; }
 void trapezoid::set_h(float h_) { h = h_; }
 
-void trapezoid::points()
+void trapezoid::point(int i, float &x_, float &y_) 
 {
-	cout << "левая верхняя граница: \n"; 
-	cout << "координата x: " << x << endl;
-	cout << "координата y: " << y << endl;
+	x_ = x;
+	y_ = y;
 
-	cout << "правая верхняя граница: \n";
-	cout << "координата x: " << x + a << endl;
-	cout << "координата y: " << y << endl;
-
-	cout << "левая нижняя граница: \n";
-	cout << "координата x: " << x - ((b-a)/2) << endl;
-	cout << "координата y: " << y - h << endl;
-
-	cout << "правая нижняя граница: \n";;
-	cout << "координата x: " << x + (a+b)/2 << endl;
-	cout << "координата y: " << y - h << endl;
+	if (i == 1)
+	{
+		x_ = x;
+		y_ = y;
+	}
+	if (i == 2)
+	{
+		x_ = x + a;
+		y_ = y;
+	}
+	if (i == 3)
+	{
+		x_ = x - ((b - a) / 2);
+		y_ = y - h;
+	}
+	if (i == 4)
+	{
+		x_ = x + (a + b) / 2;
+		y = y - h;
+	}
 }
 
 float trapezoid::middleline()

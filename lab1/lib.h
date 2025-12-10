@@ -24,7 +24,7 @@ public:
 	void set_b(float b_);
 	void set_h(float h_);
 
-	void points();
+	void point(int i, float& x_, float& y_);
 
 	float middleline();
 
