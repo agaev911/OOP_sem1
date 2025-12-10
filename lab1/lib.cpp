@@ -94,16 +94,12 @@ float trapezoid::angle()
 	return s;
 }
 
-void trapezoid::pointO()
+void trapezoid::pointO(float &x_, float &y_)
 {
-	float x, y;
 	float k;
 	k = b / a;
-	x = ((this->x - ((b - a) / 2)) + k * (this->x + a) / (1 + k));
-	y = (((this->y - h) + k * this->y) / (1 + k));
-	cout << "Координаты точки пересечения диагоналей: " << endl;
-	cout << "координата x: " << x << endl;
-	cout << "координата y: " << y << endl;
+	x_ = ((this->x - ((b - a) / 2)) + k * (this->x + a) / (1 + k));
+	y_ = (((this->y - h) + k * this->y) / (1 + k));
 }
 
 float trapezoid::area()
